@@ -12,17 +12,19 @@ abstract class Car {
     /** Creates a car with a starting mileage on the odometer.
     @throws IllegalArgumentException if startingMileage is negative*/
     public Car(String make, String model, double startingMileage) {
+        if (startingMileage < 0) {
+            throw new IllegalArgumentException("Starting mileage is negative.");
+        }
         this.make = make;
         this.model = model;
         this.startingMileage = startingMileage;
 
-        if (startingMileage < 0) {
-            throw new IllegalArgumentException("Starting mileage is negative.");
-        }
     }
 
     /** Starting mileage is 0. */
     public Car(String make, String model) {
+        this.make = make;
+        this.model = model;
         this.startingMileage = 0;
     }
 
