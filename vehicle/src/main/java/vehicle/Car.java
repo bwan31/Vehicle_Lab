@@ -6,7 +6,6 @@ abstract class Car {
     private String model;
     private double startingMileage;
     private double miles;
-    private double mileage;
     private List<Double> milesEachDay;
 
     /** Creates a car with a starting mileage on the odometer.
@@ -32,7 +31,13 @@ abstract class Car {
     not, returns false.
     @throws IllegalArgumentException if miles is negative.*/
     public boolean canDrive(double miles) {
-        // TODO
+        if (miles < 0) {
+            throw new IllegalArgumentException("Miles cannot be negative.");
+        }
+        if (miles > getRemainingRange()) {
+            return false;
+        }
+        return true;
     }
 
     /** Drives the full given number of miles.
@@ -51,13 +56,12 @@ abstract class Car {
     number, ".0" should still display.
     */
     public String toString() {
-        return make + model + " (" + mileage + " mi)";
+        return make + model + " (" + startingMileage + " mi)";
     }
 
     /** Returns how many miles have been driven so far (odometer). */
     public double getMileage() {
-        // TODO
-        return 0;
+        return startingMileage;
     }
 
     /** Returns the make of the car. */
@@ -82,8 +86,7 @@ abstract class Car {
         if (miles < 0) {
             throw new IllegalArgumentException("Miles cannot be negative.");
         }
-
-        // TODO
+        startingMileage += miles;
     }
 
     /** The car attempts to drive, in order, each of the daily number of
