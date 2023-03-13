@@ -41,22 +41,22 @@ public class ElectricCar extends Car {
 
     /** Returns how many more miles the car can currently go without recharging. */
     public double getRemainingRange(){
-        return 3.4;
+        return getRemainingRange();
     }
 
     /** Returns how many miles the car could go on a full charge. */
     public double getMaxRange(){
-        return 3.4;
+        return getMaxRange();
     }
 
     /** Recharges the car to max range capability. */
     public void recharge(){
-
+        currentCharge = 250; // this is only for the chevrolet bird 
     }
 
     /** Decreases the amount of energy in the battery based by the number of miles passed as an argument. */
     protected void decreaseCharge(double miles){
-        
+        currentCharge -= miles;
     }
 
 }
