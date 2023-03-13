@@ -32,9 +32,8 @@ abstract class GasPoweredCar extends Car{
         if(miles < 0 || miles / mpg > fuelLevel) { 
             throw new IllegalArgumentException();
         }
+        decreaseFuelLevel(miles);
         super.addMileage(miles);
-        fuelLevel -= miles / mpg;
-
     }
 
     public double getMPG() {

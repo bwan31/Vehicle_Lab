@@ -6,7 +6,6 @@ abstract class Car {
     private String model;
     private double startingMileage;
     private double miles;
-    private List<Double> milesEachDay;
 
     /** Creates a car with a starting mileage on the odometer.
     @throws IllegalArgumentException if startingMileage is negative*/
@@ -45,9 +44,9 @@ abstract class Car {
     too high given the current fuel. */
     public abstract void drive(double miles) {
         // TODO
-        // if (miles < 0 || miles > <current fuel>) {
-            // throw new IllegalArgumentException("Car cannot drive negative miles, or cannot drive more than the current fuel.")
-        // }
+        if (miles < 0 || miles * > ) {
+            throw new IllegalArgumentException("Car cannot drive negative miles, or cannot drive more than the current fuel.")
+        }
     }
 
     /** Gives String representation of Car as
@@ -78,6 +77,7 @@ abstract class Car {
     remaining fuel/energy reserves. */
     public abstract double getRemainingRange() {
         // TODO
+        
     }
 
     /** Adds mileage to the odometer.
