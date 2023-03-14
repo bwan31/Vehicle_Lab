@@ -42,7 +42,7 @@ abstract class Car {
     @throws IllegalArgumentException if miles is negative or if miles is
     too high given the current fuel. */
     public abstract void drive(double miles);
-    
+
     /** Gives String representation of Car as
     "<make and model> (<mileage> mi)"
     Mileage should be rounded to 1 decimal place. If mileage is a whole
@@ -95,7 +95,6 @@ abstract class Car {
             }
             drive(milesEachDay.get(i));
         }
-        // TODO
         return i; 
     }
 }
