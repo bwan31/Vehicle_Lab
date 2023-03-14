@@ -42,12 +42,7 @@ abstract class Car {
     /** Drives the full given number of miles.
     @throws IllegalArgumentException if miles is negative or if miles is
     too high given the current fuel. */
-    public abstract void drive(double miles) {
-        // TODO
-        if (miles < 0 || miles * > ) {
-            throw new IllegalArgumentException("Car cannot drive negative miles, or cannot drive more than the current fuel.")
-        }
-    }
+    public abstract void drive(double miles);
 
     /** Gives String representation of Car as
     "<make and model> (<mileage> mi)"
@@ -75,10 +70,7 @@ abstract class Car {
 
     /** Returns how many more miles the car can currently go given the
     remaining fuel/energy reserves. */
-    public abstract double getRemainingRange() {
-        // TODO
-        
-    }
+    public abstract double getRemainingRange();
 
     /** Adds mileage to the odometer.
     @throws IllegalArgumentException if miles is negative. */
