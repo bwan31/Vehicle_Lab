@@ -7,12 +7,15 @@ class HondaAccordian extends GasPoweredCar {
     that stuff. All Honda Accordian models have 14.5 gallon tanks and
     33.2 MPG. */
     public HondaAccordian(double startingMileage, int modelYear) {
+        super("Honda", "Accordian", startingMileage, 33.2, 14.5);
         this.modelYear = modelYear;
     }
 
     /** Defaults mileage to 0. */
     public HondaAccordian(int modelYear) {
         // TODO
+        super("Honda", "Accordian", 33.2, 14.5);
+        this.modelYear = modelYear;
     }
 
     /** Prints out the model year, make and model, and mileage.

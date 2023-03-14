@@ -94,7 +94,7 @@ abstract class Car {
                 throw new IllegalArgumentException();
             }
             drive(milesEachDay.get(i));
-        }s
+        }
         return i; 
     }
 }
