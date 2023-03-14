@@ -42,10 +42,6 @@ abstract class Car {
     @throws IllegalArgumentException if miles is negative or if miles is
     too high given the current fuel. */
     public abstract void drive(double miles);
-<<<<<<< HEAD
-=======
-    
->>>>>>> 694890d948c1ce12d383b5ddbb4735b1c91ee948
 
     /** Gives String representation of Car as
     "<make and model> (<mileage> mi)"
@@ -98,8 +94,7 @@ abstract class Car {
                 throw new IllegalArgumentException();
             }
             drive(milesEachDay.get(i));
-        }
-        // TODO
+        }s
         return i; 
     }
 }
