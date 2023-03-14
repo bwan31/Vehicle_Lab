@@ -5,7 +5,6 @@ abstract class Car {
     private String make;
     private String model;
     private double startingMileage;
-    private double miles;
 
     /** Creates a car with a starting mileage on the odometer.
     @throws IllegalArgumentException if startingMileage is negative*/
@@ -43,6 +42,10 @@ abstract class Car {
     @throws IllegalArgumentException if miles is negative or if miles is
     too high given the current fuel. */
     public abstract void drive(double miles);
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 694890d948c1ce12d383b5ddbb4735b1c91ee948
 
     /** Gives String representation of Car as
     "<make and model> (<mileage> mi)"
@@ -89,11 +92,14 @@ abstract class Car {
     attempted days. The exception check should occur prior to any driving
     is attempted. */
     public int roadTrip(List<Double> milesEachDay) {
-        if (miles < 0) {
-            throw new IllegalArgumentException("Miles cannot be negative.");
+        int i;
+        for(i = 0; i < milesEachDay.size(); i++) {
+            if (milesEachDay.get(i) < 0) {
+                throw new IllegalArgumentException();
+            }
+            drive(milesEachDay.get(i));
         }
-
         // TODO
-        return 0; 
+        return i; 
     }
 }
