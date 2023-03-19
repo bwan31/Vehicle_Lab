@@ -4,7 +4,7 @@ public class Sample_HondaAccordian {
     
     @Test
     public void HondaConstructor_Tests() {
-        HondaAccordian h = new HondaAccordian;
+        HondaAccordian h = new HondaAccordian(208);
 
         assertEquals(h.getFuelCapacity(), 14.5, 0.01, "Initial fuel capaticity should be 14.5");
 
