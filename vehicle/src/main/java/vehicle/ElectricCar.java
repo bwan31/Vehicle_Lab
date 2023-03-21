@@ -12,15 +12,15 @@ public class ElectricCar extends Car {
         if(milesOnMaxCharge<=0){
             throw new IllegalArgumentException();
         }
-        milesOnMaxCharge = this.milesOnMaxCharge;
-        currentCharge = this.milesOnMaxCharge;
+        this.milesOnMaxCharge = milesOnMaxCharge;
+        this.currentCharge = milesOnMaxCharge;
     }
 
     /** Defaults mileage to 0.
     @throws IllegalArgumentException if milesOnMaxCharge is nonpositive.*/
     public ElectricCar (String make, String model, double milesOnMaxCharge){
         super(make, model);
-        if(this.milesOnMaxCharge <= 0){
+        if(milesOnMaxCharge <= 0){
             throw new IllegalArgumentException();
         }
         this.milesOnMaxCharge = milesOnMaxCharge;
@@ -46,7 +46,7 @@ public class ElectricCar extends Car {
 
     /** Returns how many miles the car could go on a full charge. */
     public double getMaxRange(){
-        return getMaxRange();
+        return milesOnMaxCharge;
     }
 
     /** Recharges the car to max range capability. */

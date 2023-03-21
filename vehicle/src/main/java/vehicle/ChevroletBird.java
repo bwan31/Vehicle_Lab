@@ -8,7 +8,7 @@ public class ChevroletBird extends ElectricCar {
      * start with their wings retracted.
      */
     public ChevroletBird(double startingMileage) {
-        super("Chevrolet", "Bird", 0, 250);
+        super("Chevrolet", "Bird", startingMileage, 250);
         extended = false;
 
     }
@@ -31,22 +31,23 @@ public class ChevroletBird extends ElectricCar {
      * superclass drive. Don’t copy-and-paste the same code here.
      */
     public void drive(double miles) {
-        if (extended = true) {
-            decreaseCharge(miles);
-            super.addMileage(miles);
-        }
+        extended = false;
+        super.drive(miles);
     }
 
     public boolean canFly(double miles) {
         if (miles < 0) {
             throw new IllegalArgumentException();
         }
-        return extended;
+
+        return miles <= getRemainingRange();
     }
 
     public void fly(double miles) {
         if (miles < 0 || miles > getRemainingRange()) {
             throw new IllegalArgumentException();
         }
+        extended = true;
+        super.decreaseCharge(miles);
     }
 }
