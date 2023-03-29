@@ -3,7 +3,7 @@ package vehicle;
 class TeslaModelZ extends ElectricCar implements SelfDriving{
     private int modelNum;
     public TeslaModelZ(double startingMileage, int modelNum) {
-        super("Tesla", "Z", startingMileage, 340);
+        super("Tesla", "Z" + modelNum, startingMileage, 340);
         this.modelNum = modelNum;
     }
 
@@ -20,14 +20,18 @@ class TeslaModelZ extends ElectricCar implements SelfDriving{
     }
 
     public String toString() {
-        return super.getMake() + " " + getModelNum() + " (" + super.getMileage() + " mi) ";
+        return super.toString();
     }
 
     public void driveAutonomously(double miles) {
-        if(miles < 0) {
+        if (miles < 0) { 
             throw new IllegalArgumentException();
         }
-        drive(Math.min(miles, getMaxRange())); 
-        
+        if (miles > getRemainingRange()) {
+            drive(getRemainingRange());
+        }
+        else {
+            drive(Math.min(miles, getMaxRange())); 
+        } 
     }
 }

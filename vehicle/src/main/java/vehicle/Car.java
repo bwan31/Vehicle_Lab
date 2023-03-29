@@ -93,8 +93,13 @@ abstract class Car {
             if (milesEachDay.get(i) < 0) {
                 throw new IllegalArgumentException();
             }
+
+            if (!canDrive(milesEachDay.get(i))) {
+                return i;
+            }
+
             drive(milesEachDay.get(i));
-        }
+        } 
         return i; 
     }
 }
